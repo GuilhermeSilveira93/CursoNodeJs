@@ -12,3 +12,5 @@ if (!_env.success) {
   throw new Error('Invalid environment variables')
 }
 export const env = _env.data
+
+// https://app.rocketseat.com.br/classroom/api-node-js-com-solid/group/integracao-com-prisma-orm/lesson/postgre-sql-com-docker
