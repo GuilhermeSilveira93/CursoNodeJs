@@ -8,7 +8,32 @@ datasource db {
 }
 
 model User {
-  ID_USUARIO String @id @default(uuid())
+  id    String @id @default(uuid())
+  name  String
+  email String @unique
 
   @@map("users")
+}
+
+model Gym {
+  id          String  @id @default(uuid())
+  title       String
+  description String?
+  phone       String?
+  latitude    Decimal
+  longitude   Decimal
+
+  idCheckin CheckIn @relation(fields: [checkInId], references: [id])
+  checkInId String
+
+  @@map("gyms")
+}
+
+model CheckIn {
+  id           String    @id @default(uuid())
+  created_at   DateTime  @default(now())
+  validated_at DateTime?
+  Gym          Gym[]
+
+  @@map("check_ins")
 }
