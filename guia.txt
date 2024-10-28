@@ -1,0 +1,8 @@
+CONTROLLER: Porta de entrada para a aplicação (HTTP), é onde as requisições batem.
+
+SERVICE: Posso criar classes e usa-las em outros módulos, basta colocar a classe no
+campo de providers de um módulo.
+Para que a classe que eu crie possa ser usada em outros módulos, tenh oque colocar o
+decorator @Injectable()
+
+MODULE:
